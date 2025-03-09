@@ -2,7 +2,7 @@
 
 spring:
   application:
-    name: springboot-init
+    name: bysj
   # 默认 dev 环境
   profiles:
     active: dev

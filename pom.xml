@@ -11,9 +11,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.lppnb</groupId>
-    <artifactId>springboot-init</artifactId>
+    <artifactId>bysj</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springboot-init</name>
+    <name>bysj</name>
     <properties>
         <java.version>1.8</java.version>
     </properties>
