@@ -1,21 +1,20 @@
 package com.lppnb.bysj.job.cycle;
 
+import cn.hutool.core.collection.CollUtil;
 import com.lppnb.bysj.esdao.PostEsDao;
 import com.lppnb.bysj.mapper.PostMapper;
 import com.lppnb.bysj.model.dto.post.PostEsDTO;
 import com.lppnb.bysj.model.entity.Post;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Scheduled;
+
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.annotation.Resource;
-import lombok.extern.slf4j.Slf4j;
-import cn.hutool.core.collection.CollUtil;
-import org.springframework.scheduling.annotation.Scheduled;
 
 /**
  * 增量同步帖子到 es
- *
-
  */
 // todo 取消注释开启任务
 //@Component

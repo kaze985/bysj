@@ -1,7 +1,5 @@
 package com.lppnb.bysj.service.impl;
 
-import static com.lppnb.bysj.constant.UserConstant.USER_LOGIN_STATE;
-
 import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -16,10 +14,6 @@ import com.lppnb.bysj.model.vo.LoginUserVO;
 import com.lppnb.bysj.model.vo.UserVO;
 import com.lppnb.bysj.service.UserService;
 import com.lppnb.bysj.utils.SqlUtils;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
 import org.apache.commons.lang3.StringUtils;
@@ -27,10 +21,15 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.lppnb.bysj.constant.UserConstant.USER_LOGIN_STATE;
+
 /**
  * 用户服务实现
- *
-
  */
 @Service
 @Slf4j

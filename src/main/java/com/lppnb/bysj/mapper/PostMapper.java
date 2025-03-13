@@ -2,13 +2,12 @@ package com.lppnb.bysj.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lppnb.bysj.model.entity.Post;
+
 import java.util.Date;
 import java.util.List;
 
 /**
  * 帖子数据库操作
- *
-
  */
 public interface PostMapper extends BaseMapper<Post> {
 

@@ -2,8 +2,6 @@ package com.lppnb.bysj.constant;
 
 /**
  * 文件常量
- *
-
  */
 public interface FileConstant {
 

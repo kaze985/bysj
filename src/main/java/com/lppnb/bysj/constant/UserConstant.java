@@ -2,8 +2,6 @@ package com.lppnb.bysj.constant;
 
 /**
  * 用户常量
- *
-
  */
 public interface UserConstant {
 

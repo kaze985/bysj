@@ -1,20 +1,19 @@
 package com.lppnb.bysj.job.once;
 
+import cn.hutool.core.collection.CollUtil;
 import com.lppnb.bysj.esdao.PostEsDao;
 import com.lppnb.bysj.model.dto.post.PostEsDTO;
 import com.lppnb.bysj.model.entity.Post;
 import com.lppnb.bysj.service.PostService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.CommandLineRunner;
+
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.annotation.Resource;
-import lombok.extern.slf4j.Slf4j;
-import cn.hutool.core.collection.CollUtil;
-import org.springframework.boot.CommandLineRunner;
 
 /**
  * 全量同步帖子到 es
- *
-
  */
 // todo 取消注释开启任务
 //@Component

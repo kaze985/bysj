@@ -4,7 +4,6 @@ import cn.hutool.core.collection.CollUtil;
 import cn.hutool.json.JSONUtil;
 import com.lppnb.bysj.model.entity.Post;
 import lombok.Data;
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.data.annotation.Id;
@@ -17,8 +16,6 @@ import java.util.List;
 
 /**
  * 帖子 ES 包装类
- *
-
  **/
 // todo 取消注释开启 ES（须先配置 ES）
 //@Document(indexName = "post")

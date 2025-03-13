@@ -14,7 +14,8 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,postId,userId,
+        id
+        ,postId,userId,
         createTime,updateTime
     </sql>
 

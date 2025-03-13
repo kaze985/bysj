@@ -13,15 +13,14 @@ import com.lppnb.bysj.model.entity.PostFavour;
 import com.lppnb.bysj.model.entity.User;
 import com.lppnb.bysj.service.PostFavourService;
 import com.lppnb.bysj.service.PostService;
-import javax.annotation.Resource;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
+
 /**
  * 帖子收藏服务实现
- *
-
  */
 @Service
 public class PostFavourServiceImpl extends ServiceImpl<PostFavourMapper, PostFavour>

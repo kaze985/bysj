@@ -6,14 +6,13 @@ import com.lppnb.bysj.model.dto.user.UserQueryRequest;
 import com.lppnb.bysj.model.entity.User;
 import com.lppnb.bysj.model.vo.LoginUserVO;
 import com.lppnb.bysj.model.vo.UserVO;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * 用户服务
- *
-
  */
 public interface UserService extends IService<User> {
 

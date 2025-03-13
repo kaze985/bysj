@@ -1,13 +1,11 @@
 package com.lppnb.bysj.service;
 
-import com.lppnb.bysj.model.entity.PostThumb;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.lppnb.bysj.model.entity.PostThumb;
 import com.lppnb.bysj.model.entity.User;
 
 /**
  * 帖子点赞服务
- *
-
  */
 public interface PostThumbService extends IService<PostThumb> {
 
