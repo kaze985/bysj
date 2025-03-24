@@ -18,13 +18,13 @@ spring:
   # 数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/bysj
+    url: jdbc:mysql://bysj:3306/bysj
     username: root
-    password: 123456
+    password: 423414a.
   # Redis 配置
   redis:
     database: 1
-    host: localhost
+    host: bysj
     port: 6379
     timeout: 5000
   servlet:
@@ -34,12 +34,12 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848
+        server-addr: bysj:8848
   rabbitmq:
-    host: localhost
+    host: bysj
     port: 5672
-    password: guest
-    username: guest
+    username: admin
+    password: 423414a.
 server:
   address: 0.0.0.0
   port: 8104
