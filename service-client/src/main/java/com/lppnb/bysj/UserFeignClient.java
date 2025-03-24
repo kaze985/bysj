@@ -20,15 +20,13 @@ import static com.lppnb.bysj.constant.UserConstant.USER_LOGIN_STATE;
 
 /**
  * 用户服务
- *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
-@FeignClient(name = "yuoj-backend-user-service", path = "/api/user/inner")
+@FeignClient(name = "user-service", path = "/api/user/inner")
 public interface UserFeignClient {
 
     /**
      * 根据 id 获取用户
+     *
      * @param userId
      * @return
      */
@@ -37,6 +35,7 @@ public interface UserFeignClient {
 
     /**
      * 根据 id 获取用户列表
+     *
      * @param idList
      * @return
      */

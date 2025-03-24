@@ -3,7 +3,6 @@ package com.lppnb.bysj.questionservice.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-
 import com.lppnb.bysj.UserFeignClient;
 import com.lppnb.bysj.common.ErrorCode;
 import com.lppnb.bysj.constant.CommonConstant;
@@ -30,13 +29,12 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
-* @author 李鱼皮
-* @description 针对表【question(题目)】的数据库操作Service实现
-* @createDate 2023-08-07 20:58:00
-*/
+ * @description 针对表【question(题目)】的数据库操作Service实现
+ * @createDate 2023-08-07 20:58:00
+ */
 @Service
 public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question>
-    implements QuestionService {
+        implements QuestionService {
 
 
     @Resource
@@ -44,6 +42,7 @@ public class QuestionServiceImpl extends ServiceImpl<QuestionMapper, Question>
 
     /**
      * 校验题目是否合法
+     *
      * @param question
      * @param add
      */

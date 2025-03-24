@@ -7,14 +7,12 @@ import com.lppnb.bysj.dto.question.QuestionQueryRequest;
 import com.lppnb.bysj.entity.Question;
 import com.lppnb.bysj.vo.QuestionVO;
 
-
 import javax.servlet.http.HttpServletRequest;
 
 /**
-* @author 李鱼皮
-* @description 针对表【question(题目)】的数据库操作Service
-* @createDate 2023-08-07 20:58:00
-*/
+ * @description 针对表【question(题目)】的数据库操作Service
+ * @createDate 2023-08-07 20:58:00
+ */
 public interface QuestionService extends IService<Question> {
 
 
@@ -33,7 +31,7 @@ public interface QuestionService extends IService<Question> {
      * @return
      */
     QueryWrapper<Question> getQueryWrapper(QuestionQueryRequest questionQueryRequest);
-    
+
     /**
      * 获取题目封装
      *
@@ -51,5 +49,5 @@ public interface QuestionService extends IService<Question> {
      * @return
      */
     Page<QuestionVO> getQuestionVOPage(Page<Question> questionPage, HttpServletRequest request);
-    
+
 }

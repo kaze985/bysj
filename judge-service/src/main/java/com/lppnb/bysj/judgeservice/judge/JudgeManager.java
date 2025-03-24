@@ -1,11 +1,11 @@
 package com.lppnb.bysj.judgeservice.judge;
 
+import com.lppnb.bysj.codesandbox.JudgeInfo;
+import com.lppnb.bysj.entity.QuestionSubmit;
 import com.lppnb.bysj.judgeservice.judge.strategy.DefaultJudgeStrategy;
 import com.lppnb.bysj.judgeservice.judge.strategy.JavaLanguageJudgeStrategy;
 import com.lppnb.bysj.judgeservice.judge.strategy.JudgeContext;
 import com.lppnb.bysj.judgeservice.judge.strategy.JudgeStrategy;
-import com.lppnb.bysj.codesandbox.JudgeInfo;
-import com.lppnb.bysj.entity.QuestionSubmit;
 import org.springframework.stereotype.Service;
 
 /**

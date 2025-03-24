@@ -1,9 +1,8 @@
 # ??????
-# @author <a href="https://github.com/liyupi">?????</a>
-# @from <a href="https://yupi.icu">????????</a>
+
 spring:
   application:
-    name: yuoj-backend-user-service
+    name: user-service
   # ?? dev ??
   profiles:
     active: dev
@@ -19,7 +18,7 @@ spring:
   # ?????
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/yuoj
+    url: jdbc:mysql://localhost:3306/bysj
     username: root
     password: 123456
   # Redis ??

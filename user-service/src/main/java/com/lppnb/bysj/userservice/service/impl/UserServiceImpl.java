@@ -3,7 +3,6 @@ package com.lppnb.bysj.userservice.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-
 import com.lppnb.bysj.common.ErrorCode;
 import com.lppnb.bysj.constant.CommonConstant;
 import com.lppnb.bysj.dto.user.UserQueryRequest;
@@ -31,9 +30,6 @@ import static com.lppnb.bysj.constant.UserConstant.USER_LOGIN_STATE;
 
 /**
  * 用户服务实现
- *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
 @Service
 @Slf4j
@@ -42,7 +38,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     /**
      * 盐值，混淆密码
      */
-    private static final String SALT = "yupi";
+    private static final String SALT = "lppnb";
 
     @Override
     public long userRegister(String userAccount, String userPassword, String checkPassword) {

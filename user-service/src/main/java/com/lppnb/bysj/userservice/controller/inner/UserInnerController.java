@@ -25,6 +25,7 @@ public class UserInnerController implements UserFeignClient {
 
     /**
      * 根据 id 获取用户
+     *
      * @param userId
      * @return
      */
@@ -36,6 +37,7 @@ public class UserInnerController implements UserFeignClient {
 
     /**
      * 根据 id 获取用户列表
+     *
      * @param idList
      * @return
      */
