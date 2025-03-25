@@ -9,6 +9,7 @@ import com.lppnb.bysj.common.ErrorCode;
 import com.lppnb.bysj.dto.question.JudgeCase;
 import com.lppnb.bysj.entity.Question;
 import com.lppnb.bysj.entity.QuestionSubmit;
+import com.lppnb.bysj.enums.JudgeInfoMessageEnum;
 import com.lppnb.bysj.enums.QuestionSubmitStatusEnum;
 import com.lppnb.bysj.exception.BusinessException;
 import com.lppnb.bysj.judgeservice.judge.codesandbox.CodeSandbox;
@@ -91,7 +92,21 @@ public class JudgeServiceImpl implements JudgeService {
         questionSubmitUpdate.setJudgeInfo(JSONUtil.toJsonStr(judgeInfo));
         update = questionFeignClient.updateQuestionSubmitById(questionSubmitUpdate);
         if (!update) {
-            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "题目状态更新错误");
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "题目提交状态更新错误");
+        }
+        // 7）修改题目提交数和通过数
+        Question latestQuestion = questionFeignClient.getQuestionById(questionId);
+        Integer latestQuestionSubmitNum = latestQuestion.getSubmitNum();
+        Integer latestQuestionAcceptedNum = latestQuestion.getAcceptedNum();
+        Question updateNumQuestion = new Question();
+        updateNumQuestion.setId(questionId);
+        updateNumQuestion.setSubmitNum(latestQuestionSubmitNum + 1);
+        if (JudgeInfoMessageEnum.ACCEPTED.getValue().equals(judgeInfo.getMessage())) {
+            updateNumQuestion.setAcceptedNum(latestQuestionAcceptedNum + 1);
+        }
+        boolean updateNum = questionFeignClient.updateQuestionById(updateNumQuestion);
+        if (!updateNum) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "题目提交数和通过数更新错误");
         }
         QuestionSubmit questionSubmitResult = questionFeignClient.getQuestionSubmitById(questionId);
         return questionSubmitResult;
