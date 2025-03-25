@@ -27,6 +27,7 @@ spring:
     host: bysj
     port: 6379
     timeout: 5000
+    password: 423414a.
   servlet:
     multipart:
       # 大小限制
