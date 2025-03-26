@@ -96,7 +96,7 @@ public class QuestionSubmitVO implements Serializable {
      * @param questionSubmit
      * @return
      */
-    public static QuestionSubmitVO objToVo(QuestionSubmit questionSubmit) {
+    public static QuestionSubmitVO objToVo(QuestionSubmit questionSubmit, UserVO userVO, QuestionVO questionVO) {
         if (questionSubmit == null) {
             return null;
         }
@@ -104,6 +104,8 @@ public class QuestionSubmitVO implements Serializable {
         BeanUtils.copyProperties(questionSubmit, questionSubmitVO);
         String judgeInfoStr = questionSubmit.getJudgeInfo();
         questionSubmitVO.setJudgeInfo(JSONUtil.toBean(judgeInfoStr, JudgeInfo.class));
+        questionSubmitVO.setQuestionVO(questionVO);
+        questionSubmitVO.setUserVO(userVO);
         return questionSubmitVO;
     }
 

@@ -76,20 +76,25 @@ public class JudgeServiceImpl implements JudgeService {
                 .build();
         ExecuteCodeResponse executeCodeResponse = codeSandbox.executeCode(executeCodeRequest);
         List<String> outputList = executeCodeResponse.getOutputList();
+        String message = executeCodeResponse.getMessage();
+        Integer status = executeCodeResponse.getStatus();
+        JudgeInfo judgeInfo = executeCodeResponse.getJudgeInfo();
         // 5）根据沙箱的执行结果，设置题目的判题状态和信息
         JudgeContext judgeContext = new JudgeContext();
-        judgeContext.setJudgeInfo(executeCodeResponse.getJudgeInfo());
+        judgeContext.setMessage(message);
+        judgeContext.setStatus(status);
+        judgeContext.setJudgeInfo(judgeInfo);
         judgeContext.setInputList(inputList);
         judgeContext.setOutputList(outputList);
         judgeContext.setJudgeCaseList(judgeCaseList);
         judgeContext.setQuestion(question);
         judgeContext.setQuestionSubmit(questionSubmit);
-        JudgeInfo judgeInfo = judgeManager.doJudge(judgeContext);
+        JudgeInfo afterJudgeInfo = judgeManager.doJudge(judgeContext);
         // 6）修改数据库中的判题结果
         questionSubmitUpdate = new QuestionSubmit();
         questionSubmitUpdate.setId(questionSubmitId);
-        questionSubmitUpdate.setStatus(QuestionSubmitStatusEnum.SUCCEED.getValue());
-        questionSubmitUpdate.setJudgeInfo(JSONUtil.toJsonStr(judgeInfo));
+        questionSubmitUpdate.setStatus(status);
+        questionSubmitUpdate.setJudgeInfo(JSONUtil.toJsonStr(afterJudgeInfo));
         update = questionFeignClient.updateQuestionSubmitById(questionSubmitUpdate);
         if (!update) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "题目提交状态更新错误");
@@ -101,14 +106,13 @@ public class JudgeServiceImpl implements JudgeService {
         Question updateNumQuestion = new Question();
         updateNumQuestion.setId(questionId);
         updateNumQuestion.setSubmitNum(latestQuestionSubmitNum + 1);
-        if (JudgeInfoMessageEnum.ACCEPTED.getValue().equals(judgeInfo.getMessage())) {
+        if (JudgeInfoMessageEnum.ACCEPTED.getValue().equals(afterJudgeInfo.getMessage())) {
             updateNumQuestion.setAcceptedNum(latestQuestionAcceptedNum + 1);
         }
         boolean updateNum = questionFeignClient.updateQuestionById(updateNumQuestion);
         if (!updateNum) {
             throw new BusinessException(ErrorCode.SYSTEM_ERROR, "题目提交数和通过数更新错误");
         }
-        QuestionSubmit questionSubmitResult = questionFeignClient.getQuestionSubmitById(questionId);
-        return questionSubmitResult;
+        return questionFeignClient.getQuestionSubmitById(questionId);
     }
 }

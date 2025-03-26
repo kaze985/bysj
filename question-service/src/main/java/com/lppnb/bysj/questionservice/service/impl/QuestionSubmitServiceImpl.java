@@ -21,6 +21,8 @@ import com.lppnb.bysj.questionservice.service.QuestionService;
 import com.lppnb.bysj.questionservice.service.QuestionSubmitService;
 import com.lppnb.bysj.utils.SqlUtils;
 import com.lppnb.bysj.vo.QuestionSubmitVO;
+import com.lppnb.bysj.vo.QuestionVO;
+import com.lppnb.bysj.vo.UserVO;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -131,7 +133,11 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
 
     @Override
     public QuestionSubmitVO getQuestionSubmitVO(QuestionSubmit questionSubmit, User loginUser) {
-        QuestionSubmitVO questionSubmitVO = QuestionSubmitVO.objToVo(questionSubmit);
+        User user = userFeignClient.getById(questionSubmit.getUserId());
+        UserVO userVO = userFeignClient.getUserVO(user);
+        Question question = questionService.getById(questionSubmit.getQuestionId());
+        QuestionVO questionVO = QuestionVO.objToVo(question);
+        QuestionSubmitVO questionSubmitVO = QuestionSubmitVO.objToVo(questionSubmit, userVO, questionVO);
         // 脱敏：仅本人和管理员能看见自己（提交 userId 和登录用户 id 不同）提交的代码
         long userId = loginUser.getId();
         // 处理脱敏

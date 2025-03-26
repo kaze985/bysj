@@ -9,7 +9,7 @@ import com.lppnb.bysj.judgeservice.judge.strategy.JudgeStrategy;
 import org.springframework.stereotype.Service;
 
 /**
- * 判题管理（简化调用）
+ * 判题管理器（切换判题策略）
  */
 @Service
 public class JudgeManager {

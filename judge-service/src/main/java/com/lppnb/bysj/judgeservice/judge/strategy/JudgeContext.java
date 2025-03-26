@@ -16,6 +16,10 @@ public class JudgeContext {
 
     private JudgeInfo judgeInfo;
 
+    private String message;
+
+    private Integer status;
+
     private List<String> inputList;
 
     private List<String> outputList;
