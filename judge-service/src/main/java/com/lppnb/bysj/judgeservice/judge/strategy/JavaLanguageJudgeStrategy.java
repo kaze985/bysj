@@ -18,9 +18,9 @@ import java.util.Optional;
 public class JavaLanguageJudgeStrategy implements JudgeStrategy {
 
     // Java 程序相比C/C++ 程序需要额外的时间
-    private static final long JAVA_PROGRAM_TIME_COST = 10000L;
+    private static final long JAVA_PROGRAM_TIME_COST = 1000L;
     // Java 程序相比C/C++ 程序需要额外的内存
-    private static final long JAVA_PROGRAM_MEMORY_COST = 10000L;
+    private static final long JAVA_PROGRAM_MEMORY_COST = 10 * 1024 * 1024L;
 
     /**
      * 执行判题
