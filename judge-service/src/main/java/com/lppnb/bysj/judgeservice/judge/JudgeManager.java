@@ -2,6 +2,7 @@ package com.lppnb.bysj.judgeservice.judge;
 
 import com.lppnb.bysj.codesandbox.JudgeInfo;
 import com.lppnb.bysj.entity.QuestionSubmit;
+import com.lppnb.bysj.enums.QuestionSubmitLanguageEnum;
 import com.lppnb.bysj.judgeservice.judge.strategy.DefaultJudgeStrategy;
 import com.lppnb.bysj.judgeservice.judge.strategy.JavaLanguageJudgeStrategy;
 import com.lppnb.bysj.judgeservice.judge.strategy.JudgeContext;
@@ -24,7 +25,7 @@ public class JudgeManager {
         QuestionSubmit questionSubmit = judgeContext.getQuestionSubmit();
         String language = questionSubmit.getLanguage();
         JudgeStrategy judgeStrategy = new DefaultJudgeStrategy();
-        if ("java".equals(language)) {
+        if (QuestionSubmitLanguageEnum.JAVA.getValue().equals(language)) {
             judgeStrategy = new JavaLanguageJudgeStrategy();
         }
         return judgeStrategy.doJudge(judgeContext);

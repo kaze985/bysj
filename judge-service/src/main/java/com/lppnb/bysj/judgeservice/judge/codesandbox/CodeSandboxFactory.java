@@ -17,12 +17,11 @@ public class CodeSandboxFactory {
      */
     public static CodeSandbox newInstance(String type) {
         switch (type) {
-            case "example":
-                return new ExampleCodeSandbox();
             case "remote":
                 return new RemoteCodeSandbox();
             case "thirdParty":
                 return new ThirdPartyCodeSandbox();
+            case "example":
             default:
                 return new ExampleCodeSandbox();
         }
