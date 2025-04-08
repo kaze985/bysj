@@ -83,7 +83,6 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.lppnb.bysj.judgeservice.JudgeServiceApplication</mainClass>
-                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>
