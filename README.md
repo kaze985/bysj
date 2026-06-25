@@ -20,7 +20,7 @@
 
 ## 📖 项目简介
 
-**BYSJ** 是一套面向算法练习与编程竞赛场景的 **Online Judge（在线判题）** 后端服务。用户可浏览题目、在线编写并提交代码，系统通过 **代码沙箱** 编译运行后自动比对输出，返回判题结果；同时集成用户管理、帖子社区、文件上传、微信登录等能力，适合作为毕业设计或 OJ 平台的后端基础。
+**HTU-OJ** 是一套面向算法练习与编程竞赛场景的 **Online Judge（在线判题）** 后端服务。用户可浏览题目、在线编写并提交代码，系统通过 **代码沙箱** 编译运行后自动比对输出，返回判题结果；同时集成用户管理、帖子社区、文件上传、微信登录等能力，适合作为毕业设计或 OJ 平台的后端基础。
 
 | 模块 | 说明 |
 |------|------|
@@ -197,19 +197,19 @@ erDiagram
     }
 ```
 
-初始化脚本位于 [`sql/bysj.sql`](sql/bysj.sql)，执行后将创建 `bysj` 数据库及核心表。
+初始化脚本位于 [`sql/HTU-OJ.sql`](sql/HTU-OJ.sql)，执行后将创建 `HTU-OJ` 数据库及核心表。
 
 ---
 
 ## 📂 项目结构
 
 ```
-bysj/
+HTU-OJ/
 ├── docs/
 │   └── assets/              # README 配图
 ├── sql/
-│   └── bysj.sql             # 数据库初始化脚本
-├── src/main/java/com/lppnb/bysj/
+│   └── HTU-OJ.sql             # 数据库初始化脚本
+├── src/main/java/com/lppnb/HTU-OJ/
 │   ├── MainApplication.java # 启动入口
 │   ├── annotation/          # 权限注解 @AuthCheck
 │   ├── aop/                   # 权限拦截器
@@ -259,14 +259,14 @@ bysj/
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/kaze985/bysj.git
-cd bysj
+git clone https://github.com/kaze985/HTU-OJ.git
+cd HTU-OJ
 ```
 
 ### 2. 初始化数据库
 
 ```bash
-mysql -u root -p < sql/bysj.sql
+mysql -u root -p < sql/HTU-OJ.sql
 ```
 
 ### 3. 修改配置
@@ -276,7 +276,7 @@ mysql -u root -p < sql/bysj.sql
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/bysj
+    url: jdbc:mysql://localhost:3306/HTU-OJ
     username: root
     password: 你的密码
 
@@ -396,5 +396,5 @@ mvn test
 ---
 
 <p align="center">
-  <sub>Made with ❤️ for Graduation Project · BYSJ Online Judge System</sub>
+  <sub>Made with ❤️ for Graduation Project · HTU-OJ Online Judge System</sub>
 </p>
