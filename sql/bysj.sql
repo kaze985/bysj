@@ -58,4 +58,4 @@ create table if not exists question_submit
     isDelete   tinyint  default 0                 not null comment '是否删除',
     index idx_questionId (questionId),
     index idx_userId (userId)
-) comment '题目提交';
+) comment '题目提交' collate = utf8mb4_unicode_ci;
