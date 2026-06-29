@@ -197,19 +197,19 @@ erDiagram
     }
 ```
 
-初始化脚本位于 [`sql/HTU-OJ.sql`](sql/HTU-OJ.sql)，执行后将创建 `HTU-OJ` 数据库及核心表。
+初始化脚本位于 [`sql/bysj.sql`](sql/bysj.sql)，执行后将创建 `bysj` 数据库及核心表。
 
 ---
 
 ## 📂 项目结构
 
 ```
-HTU-OJ/
+bysj/
 ├── docs/
 │   └── assets/              # README 配图
 ├── sql/
-│   └── HTU-OJ.sql             # 数据库初始化脚本
-├── src/main/java/com/lppnb/HTU-OJ/
+│   └── bysj.sql             # 数据库初始化脚本
+├── src/main/java/com/lppnb/bysj/
 │   ├── MainApplication.java # 启动入口
 │   ├── annotation/          # 权限注解 @AuthCheck
 │   ├── aop/                   # 权限拦截器
@@ -259,14 +259,14 @@ HTU-OJ/
 ### 1. 克隆项目
 
 ```bash
-git clone https://github.com/kaze985/HTU-OJ.git
-cd HTU-OJ
+git clone https://github.com/kaze985/bysj.git
+cd bysj
 ```
 
 ### 2. 初始化数据库
 
 ```bash
-mysql -u root -p < sql/HTU-OJ.sql
+mysql -u root -p < sql/bysj.sql
 ```
 
 ### 3. 修改配置
@@ -276,7 +276,7 @@ mysql -u root -p < sql/HTU-OJ.sql
 ```yaml
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/HTU-OJ
+    url: jdbc:mysql://localhost:3306/bysj
     username: root
     password: 你的密码
 
